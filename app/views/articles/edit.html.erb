@@ -1,0 +1,18 @@
+<h1>Editing Article</h1>
+
+<%= form_with model: @article do |form| %>
+  <%= link_to "Back", article_path(@article) %>
+  <%= render "inline_fields", form: form, attribute: :title do %>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  <% end %>
+  <%= render "inline_fields", form: form, attribute: :description do %>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :description %>
+  <% end %>
+    <%= form.submit %>
+ 
+<% end %>
+
+<%= link_to 'Show', @article %> |
+<%= link_to 'Back', articles_path %>
